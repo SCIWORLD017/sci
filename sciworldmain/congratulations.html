@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏆 شهادتك! 🏆</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: "Tajawal", Arial, sans-serif;
+        background: #f3f3f3;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .certificate {
+        background: #fff;
+        border: 5px solid #4fc3f7;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 700px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        position: relative;
+    }
+    .certificate h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        color: #4fc3f7;
+    }
+    .certificate h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .certificate .score {
+        font-size: 24px;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+    .certificate .signature {
+        font-size: 20px;
+        font-style: italic;
+        color: #333;
+        margin-top: 40px;
+    }
+    .certificate .seal {
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        background: #ffcc00;
+        color: white;
+        padding: 20px;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 20px;
+        transform: rotate(-15deg);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+    a.home-btn {
+        display: inline-block;
+        text-decoration: none;
+        background: #4fc3f7;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+
+<div class="certificate">
+    <div class="seal">🏆</div>
+    <h1>شهادة التقدير</h1>
+    <h2>مقدمة من SciWorld</h2>
+    <div class="score" id="score-display">درجتك في الاختبار النهائي: 0</div>
+    <div class="signature">توقيع المعلم</div>
+    <a href="index.html" class="home-btn">العودة إلى الصفحة الرئيسية</a>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get('score');
+    if(score !== null){
+        document.getElementById('score-display').innerText = `درجتك في الاختبار النهائي: ${score} / 10`;
+    }
+</script>
+
+</body>
+</html>
